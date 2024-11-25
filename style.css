@@ -1,0 +1,274 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+}
+
+.scrollbar::-webkit-scrollbar {
+	width: 20px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+	background-color: #e7e7e7;
+	border: 1px solid #cacaca;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	border: 4px solid transparent;
+	background-clip: content-box;
+	background-color: #D4A373;
+}
+
+body {
+	overflow-x: hidden;
+	font-size: 1rem;
+	color: black;
+}
+
+h1,
+h2,
+h3,
+a {
+	font-family: 'Bitter', serif;
+	font-weight: 400;
+	color: black;
+}
+
+h2 {
+	color: #D4A373;
+	font-weight: bolder;
+}
+
+.container {
+	width: 100vw;
+	min-width: 320px;
+	max-width: 1300px;
+	margin: auto;
+	min-height: 100vh;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	flex-basis: 10vh;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 3vw;
+	background-color: #CCD5AE;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+header h1 {
+	align-self: center;
+}
+
+header nav {
+	align-self: center;
+}
+
+header nav ul {
+	list-style-type: none;
+	align-self: center;
+	display: flex;
+}
+
+header nav ul a {
+	display: block;
+	margin-left: 2vw;
+	padding: 0.5vw 1vw;
+	font-size: 1.1rem;
+	text-decoration: none;
+}
+
+header nav ul a:hover,
+header nav ul a.active {
+	border-bottom: 2px solid rgba(105, 105, 105, 0.5);
+}
+
+main {
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 2vh;
+}
+
+main>aside {
+	flex-basis: 20%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+
+main>section {
+	flex: 1 1 55%;
+	display: flex;
+	justify-content: center;
+}
+
+
+main>section+aside {
+	flex-basis: 20%;
+}
+
+.card {
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	padding: 20px;
+	box-sizing: border-box;
+	height: 320px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #FEFAE0;
+	border-radius: 10px;
+}
+
+.resume {
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	box-sizing: border-box;
+	height: 660px;
+	width: 85%;
+	display: flex;
+	padding: 30px;
+	position: relative;
+	background-color: #FEFAE0;
+	border-radius: 10px;
+}
+
+.resumeContent {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+}
+
+.resumePhoto {
+	width: 100px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: rotate(225deg);
+}
+
+.resumePhoto img {
+	width: 100%;
+}
+
+.skills {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.skillsContent {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.skillsContent p {
+	background-color: #E9EDC9;
+	padding: 5px 10px;
+	border-radius: 20px;
+	margin: 5px;
+	margin-left: 0;
+}
+
+@media only screen and (max-width: 1370px) {
+	main {
+		flex-direction: column;
+		align-items: center;
+		padding-top: 20px;
+		gap: 20px;
+	}
+
+	main>aside,
+	main>section {
+		width: 100%;
+	}
+
+	.card {
+		width: 90%;
+		margin: 10px auto;
+		height: auto;
+		gap: 30px;
+	}
+
+	.resume {
+		width: 90%;
+		margin: 10px auto;
+	}
+}
+
+/* *** */
+
+
+header nav ul {
+	display: flex;
+}
+
+header nav .burger-menu {
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.burger-menu .bar {
+	width: 30px;
+	height: 3px;
+	background-color: black;
+	border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+	header nav ul {
+		display: none;
+		position: absolute;
+		top: 70px;
+		right: 35px;
+		background-color: rgba(221, 176, 131, 0.8);
+		width: 200px;
+		text-align: center;
+		padding: 20px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+	}
+
+	header ul.active {
+		display: block;
+	}
+
+	header nav .burger-menu {
+		display: flex;
+	}
+
+	header nav ul a {
+		display: block;
+		padding: 10px 0;
+		text-decoration: none;
+		color: black;
+		margin: 0;
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		margin-bottom: 10px;
+		border-radius: 20px;
+	  background-color: #D0D69C;
+		transition: all .3s linear;
+	}
+
+	header nav ul a:hover,
+	header nav ul a.active {
+		border: none;
+		background-color: #E9EDC9;
+	}
+}
